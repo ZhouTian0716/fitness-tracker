@@ -46,14 +46,12 @@ router.put("/api/workouts/:id", async (req, res) => {
 router.get("/api/workouts/range", async (req, res) => {
   try {
     const workoutData = await Workout.find({});
+    workoutData.forEach( workout => { workout.sumDuration() } );
     res.status(200).json(workoutData);
   } 
   catch (err) {
     res.status(400).json(err);
   }   
 });
-
-
-
 
 module.exports = router;
