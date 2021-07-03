@@ -57,7 +57,6 @@ const workoutSchema = new Schema({
 
 
 workoutSchema.methods.sumDuration = function() {
-  console.log(this.exercises);
   if(this.exercises){
     var sum = 0;
     for(let i=0; i < this.exercises.length; i++){

@@ -86,6 +86,7 @@ function validateInputs() {
     }
   }
 
+  
   if (isValid) {
     completeButton.removeAttribute("disabled");
     addButton.removeAttribute("disabled");
@@ -93,6 +94,8 @@ function validateInputs() {
     completeButton.setAttribute("disabled", true);
     addButton.setAttribute("disabled", true);
   }
+
+  return isValid;
 }
 
 async function handleFormSubmit(event) {
@@ -142,8 +145,14 @@ if (workoutTypeSelect) {
 }
 if (completeButton) {
   completeButton.addEventListener("click", function (event) {
-    shouldNavigateAway = true;
-    handleFormSubmit(event);
+    
+    if(validateInputs()){
+      shouldNavigateAway = true;
+      handleFormSubmit(event);
+    }
+    // Redirect to homepage when complete
+    else{location.href = "/";}
+    
   });
 }
 if (addButton) {
