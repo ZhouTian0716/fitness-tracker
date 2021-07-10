@@ -1,11 +1,5 @@
-const mongoose = require('mongoose');
 const Workout = require('../models/workoutSchema');
-
-mongoose.connect('mongodb://localhost/workout', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-});
+require("./config/connection.js");
 
 const workoutSeed = [
   {
@@ -125,7 +119,7 @@ const workoutSeed = [
         type: 'resistance',
         name: 'Bench Press',
         duration: 20,
-        weight: 60,
+        weight: 200,
         reps: 10,
         sets: 4,
       },
