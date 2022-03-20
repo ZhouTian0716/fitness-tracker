@@ -1,6 +1,6 @@
 # fitness-tracker
 
-# github desk tutorial
+# github desk second
 
 ## Links
 
